@@ -1,0 +1,33 @@
+.carousel {
+  position: relative;
+  display: flex;
+}
+
+.carousel-inside {
+  overflow: hidden;
+}
+
+.carousel-inside-dynamic {
+  display: flex;
+  position: relative;
+  left: 0px;
+  transition: left 0.2s;
+}
+
+.carousel-element img {
+  height: 400px;
+  margin-bottom: -4px;
+  object-fit: cover;
+}
+
+.carousel-left-arrow, .carousel-right-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
+  cursor: pointer;
+  background-color: @lambda-red;
+  color: white;
+  border: none;
+  font-size: 45px;
+}
