@@ -3,7 +3,6 @@ const carouselInsideDynamic = document.querySelector(
   ".carousel-inside-dynamic"
 );
 const img = document.querySelector(".carousel-element img");
-let leftScrollPosition = 0;
 let currentImage = 0;
 
 function resetImagesWidth(imgs) {
@@ -18,17 +17,15 @@ function resetImagesWidth(imgs) {
 
 function scrollCarousel(scrollRight) {
   if (scrollRight && currentImage < imgs.length - 1) {
-    leftScrollPosition -= img.clientWidth;
     currentImage++;
   } else if (!scrollRight && currentImage > 0) {
-    leftScrollPosition += img.clientWidth;
     currentImage--;
   }
   setScrollPosition();
 }
 
 function setScrollPosition() {
-  leftScrollPosition = -currentImage * img.clientWidth;
+  const leftScrollPosition = -currentImage * img.clientWidth;
   carouselInsideDynamic.style.left = `${leftScrollPosition}px`;
 }
 
